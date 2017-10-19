@@ -1,0 +1,63 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=EDD5647084A3664982010BD753960659/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=EDD5647084A3664982010BD753960659/Shortcut/@EntryValue">ieq</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=EDD5647084A3664982010BD753960659/Description/@EntryValue">IEquatable&lt;T&gt; generation</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=EDD5647084A3664982010BD753960659/Text/@EntryValue">#region Equatable Setup&#xD;
+&#xD;
+/// &lt;summary&gt;&#xD;
+///     Equals method that compares the&#xD;
+///     &lt;see cref="$TYPE$" /&gt; for equality.&#xD;
+/// &lt;/summary&gt;&#xD;
+/// &lt;param name="other"&gt;The other &lt;see cref="$TYPE$" /&gt; being compared.&lt;/param&gt;&#xD;
+/// &lt;returns&gt;True if equivalent, false otherwise.&lt;/returns&gt;&#xD;
+public bool Equals($TYPE$ other)&#xD;
+{&#xD;
+	return Equals($PROP$, other?.$PROP$) &amp;&amp;&#xD;
+			Equals($OTHER_PROP$, other?.$OTHER_PROP$&#xD;
+}&#xD;
+&#xD;
+/// &lt;summary&gt;&#xD;
+///     Overridden equals method that compares the&#xD;
+///     &lt;see cref="$TYPE$" /&gt; for equality.&#xD;
+/// &lt;/summary&gt;&#xD;
+/// &lt;param name="obj"&gt;The other &lt;see cref="$TYPE$" /&gt; being compared&lt;/param&gt;&#xD;
+/// &lt;returns&gt;True if equivalent, false otherwise.&lt;/returns&gt;&#xD;
+public override bool Equals(object obj)&#xD;
+{&#xD;
+	if (ReferenceEquals(null, obj))&#xD;
+		return false;&#xD;
+	if (ReferenceEquals(this, obj))&#xD;
+		return true;&#xD;
+	if (obj.GetType() != GetType())&#xD;
+		return false;&#xD;
+	return Equals(($TYPE$)obj);&#xD;
+}&#xD;
+&#xD;
+/// &lt;inheritdoc /&gt;&#xD;
+[System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("ReSharper", "NonReadonlyMemberInGetHashCode")]&#xD;
+public override int GetHashCode()&#xD;
+{&#xD;
+	unchecked&#xD;
+		{&#xD;
+			int hashCode = $PROP$.GetHashCode();&#xD;
+			hashCode = (hashCode * 397) ^ ($OTHER_PROP$.GetHashCode() ?? 0);&#xD;
+			return hashCode;&#xD;
+		}&#xD;
+}&#xD;
+&#xD;
+#endregion</s:String>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=EDD5647084A3664982010BD753960659/Reformat/@EntryValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=EDD5647084A3664982010BD753960659/ShortenQualifiedReferences/@EntryValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=EDD5647084A3664982010BD753960659/Applicability/=Live/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=EDD5647084A3664982010BD753960659/Scope/=74A278E9BF386142B53D57114609A033/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=EDD5647084A3664982010BD753960659/Scope/=74A278E9BF386142B53D57114609A033/Type/@EntryValue">InCSharpExceptStringLiterals</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=EDD5647084A3664982010BD753960659/Scope/=74A278E9BF386142B53D57114609A033/CustomProperties/=minimumLanguageVersion/@EntryIndexedValue">2.0</s:String>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=EDD5647084A3664982010BD753960659/Field/=TYPE/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=EDD5647084A3664982010BD753960659/Field/=TYPE/Expression/@EntryValue">typeName()</s:String>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=EDD5647084A3664982010BD753960659/Field/=TYPE/Order/@EntryValue">0</s:Int64>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=EDD5647084A3664982010BD753960659/Field/=PROP/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=EDD5647084A3664982010BD753960659/Field/=PROP/Expression/@EntryValue">completeSmart()</s:String>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=EDD5647084A3664982010BD753960659/Field/=PROP/Order/@EntryValue">1</s:Int64>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=EDD5647084A3664982010BD753960659/Field/=OTHER_005FPROP/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=EDD5647084A3664982010BD753960659/Field/=OTHER_005FPROP/Expression/@EntryValue">completeSmart()</s:String>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=EDD5647084A3664982010BD753960659/Field/=OTHER_005FPROP/Order/@EntryValue">2</s:Int64></wpf:ResourceDictionary>
