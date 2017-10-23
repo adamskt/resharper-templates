@@ -13,7 +13,7 @@
 public bool Equals($TYPE$ other)&#xD;
 {&#xD;
 	return Equals($PROP$, other?.$PROP$) &amp;&amp;&#xD;
-			Equals($OTHER_PROP$, other?.$OTHER_PROP$&#xD;
+			Equals($OTHER_PROP$, other?.$OTHER_PROP$);&#xD;
 }&#xD;
 &#xD;
 /// &lt;summary&gt;&#xD;
@@ -40,7 +40,7 @@ public override int GetHashCode()&#xD;
 	unchecked&#xD;
 		{&#xD;
 			int hashCode = $PROP$.GetHashCode();&#xD;
-			hashCode = (hashCode * 397) ^ ($OTHER_PROP$.GetHashCode() ?? 0);&#xD;
+			hashCode = (hashCode * 397) ^ ($OTHER_PROP$?.GetHashCode() ?? 0);&#xD;
 			return hashCode;&#xD;
 		}&#xD;
 }&#xD;
